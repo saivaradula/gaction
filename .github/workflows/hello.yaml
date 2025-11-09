@@ -1,4 +1,4 @@
-name: Hello Workflow
+name: First Real Workflow
 
 on:
   push:
@@ -6,8 +6,11 @@ on:
       - main
 
 jobs:
-  say-hello:
+  greet:
     runs-on: ubuntu-latest
     steps:
-      - name: Print a greeting
-        run: echo "Hello, GitHub Actions!"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Say hello
+        run: echo "Hello, Sai! Your code is ready to roll!"
